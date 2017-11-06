@@ -1,8 +1,15 @@
+
+
 var cursors =
 [
-"context-menu","help","pointer","progress","wait","cell","crosshair","text","vertical-text","alias","copy","move","no-drop","not-allowed",
-"e-resize","n-resize","ne-resize","nw-resize","s-resize","se-resize","sw-resize","w-resize","ew-resize","ns-resize","nesw-resize","nwse-resize",
-"col-resize","row-resize","all-scroll","zoom-in","zoom-out","grab","grabbing"
+	"context-menu","help","pointer","progress","wait","cell","crosshair","text","vertical-text","alias","copy","move","no-drop","not-allowed",
+	"e-resize","n-resize","ne-resize","nw-resize","s-resize","se-resize","sw-resize","w-resize","ew-resize","ns-resize","nesw-resize","nwse-resize",
+	"col-resize","row-resize","all-scroll","zoom-in","zoom-out","grab","grabbing"
+];
+
+var directions =
+[
+	'top','bottom','right','left'
 ];
 
 var elements = document.getElementsByTagName( '*' );
@@ -23,8 +30,8 @@ function()
 	element.style.width = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
 	element.style.height = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
 	
-	element.style.top = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
-	element.style.left = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
+	element['style'][ Math.floor( ( Math.random() * directions.length ) + 1) ] = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
+	element['style'][ Math.floor( ( Math.random() * directions.length ) + 1) ] = Math.floor( ( Math.random() * 100 ) + 1) + 'px';
 	
 	document.getElementsByTagName( 'html' )[ 0 ].style.cursor = cursors[ cursorIndex ];
 	//window.scrollTo( scrollX, scrollY );
